@@ -1,0 +1,15 @@
+package com.xw.rpc.transport;
+
+import com.xw.rpc.serializer.CommonSerializer;
+
+/**
+ * 服务器类通用接口
+ */
+public interface RpcServer {
+
+    void start();
+
+    int DEFAULT_SERIALIZER = CommonSerializer.KRYO_SERIALIZER;
+
+    <T> void publishService(T service, String serviceName);
+}
